@@ -11,11 +11,13 @@ include 'includes/templates/navbar.php';
 
 <div class="slid-wrapper">
     <ul class="bxslider">
-        <li><img src="./layout/img/Rectangle 1.png" /></li>
-        <li><img src="./layout/img/Rectangle 1.png" /></li>
-        <li><img src="./layout/img/Rectangle 1.png" /></li>
+        <li><img src="./layout/img/PIC.jpg" /></li>
+        <li><img src="./layout/img/pic3.jpg" /></li>
+        <li><img src="./layout/img/pic4.jpg" /></li>
     </ul>
 </div>
+
+
 </header>
 <?php
 
@@ -75,12 +77,12 @@ include 'includes/templates/statistiques.php';
             <div class="cta__description">
                 <h2 class="heading-second">Candidature</h2>
                 <p>
-                    Nous donnons à nos élèves ingénieurs une formation de qualité et
+                    Nous donnons à nos élèves licencieés une formation de qualité et
                     des expériences qui les préparent au succès dans leurs carrières.
                     Nous les aidons aussi à découvrir un domaine qui les passionne et
-                    à oser le diriger. Nos écoles sont reconnues par l’Etat.
+                    à oser le diriger.
                 </p>
-                <a href="#" class="cta-btn"><strong>Je candidate</strong></a>
+                <a href="candidature.php" class="cta-btn"><strong>Je candidate</strong></a>
             </div>
         </div>
     </section>
@@ -102,9 +104,8 @@ include 'includes/templates/statistiques.php';
                             Online Hack&Pitch Hackathon MaroCovid19
                         </h1>
                         <div class="events__time">
-                            <span><i class="simple-icon-clock"></i> 8:00 - 6:00</span>
-                            <span><i class="simple-icon-location-pin"></i>Hôtel la Tour
-                                Hassan Palace</span>
+                            <span><i class="simple-icon-clock"></i> 10:00 - 12:00</span>
+                            <span><i class="simple-icon-location-pin"></i>Fstm salle des conferances</span>
                         </div>
                     </div>
                 </div>
@@ -112,21 +113,20 @@ include 'includes/templates/statistiques.php';
             <div class="events__card">
                 <div class="events__img">
                     <a href="#"></a>
-                    <img src="./layout/img/khawarizmi.jpg" alt="" srcset="" />
+                    <img src="./layout/img/pic4.jpg" alt="" srcset="" />
                 </div>
                 <div class="events__description">
                     <div class="events__date">
-                        <h1 class="events__date--day">05</h1>
-                        <h3 class="events__date--months">MAR</h3>
+                        <h1 class="events__date--day">20</h1>
+                        <h3 class="events__date--months">AVR</h3>
                     </div>
                     <div class="events__details">
                         <h1 class="events__heading">
-                            Online Hack&Pitch Hackathon MaroCovid19
+                            IoT security workshop
                         </h1>
                         <div class="events__time">
-                            <span><i class="simple-icon-clock"></i> 8:00 - 6:00</span>
-                            <span><i class="simple-icon-location-pin"></i>Hôtel la Tour
-                                Hassan Palace</span>
+                            <span><i class="simple-icon-clock"></i> 16:00 - 18:00</span>
+                            <span><i class="simple-icon-location-pin"></i>Fstm salle des conferances</span>
                         </div>
                     </div>
                 </div>
@@ -134,28 +134,27 @@ include 'includes/templates/statistiques.php';
             <div class="events__card">
                 <div class="events__img">
                     <a href="#"></a>
-                    <img src="./layout/img/khawarizmi.jpg" alt="" srcset="" />
+                    <img src="./layout/img/images.png" alt="" srcset="" />
                 </div>
                 <div class="events__description">
                     <div class="events__date">
-                        <h1 class="events__date--day">05</h1>
-                        <h3 class="events__date--months">MAR</h3>
+                        <h1 class="events__date--day">07
+                        </h1>
+                        <h3 class="events__date--months">JUI</h3>
                     </div>
                     <div class="events__details">
                         <h1 class="events__heading">
-                            Online Hack&Pitch Hackathon MaroCovid19
-                        </h1>
-                        <div class="events__time">
-                            <span><i class="simple-icon-clock"></i> 8:00 - 6:00</span>
-                            <span><i class="simple-icon-location-pin"></i>Hôtel la Tour
-                                Hassan Palace</span>
-                        </div>
+                            Liste des candidats convoqués au concours des masters ...
+                            <div class="events__time">
+                                <span><i class="simple-icon-clock"></i> 8:00 - 10:00</span>
+                                <span><i class="simple-icon-location-pin"></i>Fstm salle des conferances</span>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="btn-inline-box">
-            <a href="#" class="btn-inline">Voir tous <span>&rarr;</span></a>
+            <a href="evenements.php" class="btn-inline">Voir tous <span>&rarr;</span></a>
         </div>
     </section>
     <section class="profs">
@@ -168,30 +167,30 @@ include 'includes/templates/statistiques.php';
                 </div>
 
                 <div class="prof">
-                    <img src="./layout/img/moumkine.jpg" alt="" class="prof__image" />
-                    <h5 class="heading-five">Pr.Noureddine moumkine</h5>
+                    <img src="./layout/img/Adib.jpg" alt="" class="prof__image" />
+                    <h5 class="heading-five">Pr. Abdellah Adib</h5>
                 </div>
                 <div class="prof">
-                    <img src="./layout/img/moumkine.jpg" alt="" class="prof__image" />
-                    <h5 class="heading-five">Pr.Noureddine moumkine</h5>
+                    <img src="./layout/img/mohamed_noua.jpg" alt="" class="prof__image" />
+                    <h5 class="heading-five">Pr. mohammed noua</h5>
                 </div>
-                <div class="prof">
-                    <img src="./layout/img/moumkine.jpg" alt="" class="prof__image" />
-                    <h5 class="heading-five">Pr.Noureddine moumkine</h5>
+                <div class="prof avatar">
+                    <i class="iconsminds-male-2"></i>
+                    <h5 class="heading-five">Pr.Omar khadir</h5>
                 </div>
             </div>
             <div class="images--secondLine">
                 <div class="prof">
-                    <img src="./layout/img/moumkine.jpg" alt="" class="prof__image" />
-                    <h5 class="heading-five">Pr.Noureddine moumkine</h5>
+                    <img src="./layout/img/leghris.jpg" alt="" class="prof__image" />
+                    <h5 class="heading-five">Pr. Cherkaoui Leghris</h5>
                 </div>
                 <div class="prof">
-                    <img src="./layout/img/moumkine.jpg" alt="" class="prof__image" />
-                    <h5 class="heading-five">Pr.Noureddine moumkine</h5>
+                    <img src="./layout/img/khalil.jpg" alt="" class="prof__image" />
+                    <h5 class="heading-five">Pr. Mohammed Khalil</h5>
                 </div>
-                <div class="prof">
-                    <img src="./layout/img/moumkine.jpg" alt="" class="prof__image" />
-                    <h5 class="heading-five">Pr.Noureddine moumkine</h5>
+                <div class="prof avatar">
+                    <i class="iconsminds-female-2"></i>
+                    <h5 class="heading-five">Pr.Salima chantit</h5>
                 </div>
             </div>
         </div>

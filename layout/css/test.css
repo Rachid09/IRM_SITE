@@ -29,7 +29,7 @@
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
+  padding: 12px 0;
   z-index: 1;
 }
 .dropdown:hover .dropbtn {
@@ -49,4 +49,20 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  text-align: center;
 }
+.bxslider li{
+  height: 480px !important;
+  width: 100vw !important;
+ 
+}
+.bxslider li img{
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+.profs .avatar i{
+  font-size: 12.5rem;
+  color: #a5a4a4;
+}
+

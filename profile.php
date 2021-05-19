@@ -53,137 +53,146 @@ include 'includes/templates/navbar.php';
     </div>
     <div class="profile__results">
         <h1 class="heading-primary">Mes Resultats</h1>
-        <table>
-            <tr>
-                <th>Module</th>
-                <th>Traitement Numériqued de l'information multimédia</th>
-                <th>Theorie de l'information</th>
-                <th>Architecture et programmation réseaux</th>
-                <th>Conduite de projets multimédia</th>
-                <th>base de données multimédia</th>
-                <th>Technologie web multimédia</th>
-                <th>Transmission de données multimédia</th>
-                <th>programmation Mobile multimédia</th>
-                <th>It-security</th>
-                <th>PFE</th>
-            </tr>
-            <th>Note</th>
-            <td><?php echo $notes['tnim'] ?></td>
-            <td><?php echo $notes['theorie'] ?></td>
-            <td><?php echo $notes['apr'] ?></td>
-            <td><?php echo $notes['cpm'] ?></td>
-            <td><?php echo $notes['bdm'] ?></td>
-            <td><?php echo $notes['twm'] ?></td>
-            <td><?php echo $notes['tdm'] ?></td>
-            <td><?php echo $notes['pmm'] ?></td>
-            <td><?php echo $notes['it_sec'] ?></td>
-            <td><?php echo $notes['pfe'] ?></td>
-        </table>
+        <?php if ($notes > 0) : ?>
+            <table>
+                <tr>
+                    <th>Module</th>
+                    <th>Traitement Numériqued de l'information multimédia</th>
+                    <th>Theorie de l'information</th>
+                    <th>Architecture et programmation réseaux</th>
+                    <th>Conduite de projets multimédia</th>
+                    <th>base de données multimédia</th>
+                    <th>Technologie web multimédia</th>
+                    <th>Transmission de données multimédia</th>
+                    <th>programmation Mobile multimédia</th>
+                    <th>It-security</th>
+                    <th>PFE</th>
+                </tr>
+                <th>Note</th>
+                <td><?php echo $notes['tnim'] ?></td>
+                <td><?php echo $notes['theorie'] ?></td>
+                <td><?php echo $notes['apr'] ?></td>
+                <td><?php echo $notes['cpm'] ?></td>
+                <td><?php echo $notes['bdm'] ?></td>
+                <td><?php echo $notes['twm'] ?></td>
+                <td><?php echo $notes['tdm'] ?></td>
+                <td><?php echo $notes['pmm'] ?></td>
+                <td><?php echo $notes['it_sec'] ?></td>
+                <td><?php echo $notes['pfe'] ?></td>
+            </table>
     </div>
-    <?php
+<?php else : ?>
+    <div style="padding:2rem 0rem;    background-color: antiquewhite;
+">
+        <h1 style="color:brown">Les resultats ne sont pas encore etre mises en place</h1>
+    </div>
+<?php endif; ?>
 
-    include 'includes/templates/statistiques.php';
-    ?>
+</div>
+<?php
+
+include 'includes/templates/statistiques.php';
+?>
 
 
-    <div class="calendar">
-        <h1 class="heading-primary mb-4">Emplois du temps</h1>
-        <div>
+<div class="calendar">
+    <h1 class="heading-primary mb-4">Emplois du temps</h1>
+    <div>
 
-            <div class="calendar__S5">
-                <table class="table_emploi">
-                    <tr>
-                        <th rowspan="2">Emploi de temps</th>
-                        <td colspan="2" class="bg-blue">Matin</td>
-                        <td colspan="2" class="bg-blue">Après midi</td>
-                    </tr>
-                    <tr>
-                        <td>8h30-10h20</td>
-                        <td>10h20-12h30</td>
-                        <td>13h30-15h20</td>
-                        <td>15h20-17h30</td>
-                    </tr>
-                    <tr>
-                        <th>Lundi</th>
-                        <td colspan="2">TI</td>
-                        <td colspan="2">TNIM</td>
-                    </tr>
-                    <tr>
-                        <th>Mardi</th>
-                        <td colspan="2">APR</td>
-                        <td colspan="2">TNIM</td>
-                    </tr>
-                    <tr>
-                        <th>Mercredi</th>
-                        <td colspan="2">APR</td>
-                        <td colspan="2">TI</td>
-                    </tr>
-                    <tr>
-                        <th>Jeudi</th>
-                        <td colspan="2">TNIM</td>
-                        <td colspan="2">APR</td>
-                    </tr>
-                    <tr>
-                        <th>Vendredi</th>
-                        <td colspan="2">TI</td>
-                        <td colspan="2">Ratt/Exam/Controle</td>
-                    </tr>
-                    <tr>
-                        <th>Samedi</th>
-                        <td colspan="2">Ratt/Exam/Controle</td>
-                        <td colspan="2"></td>
-                    </tr>
-                </table>
-                <h2 style="text-align: center; padding-top: 1rem;">Semestre 5</h2>
-            </div>
-            <div class="calendar__S6">
-                <table class="table_emploi">
-                    <tr>
-                        <th rowspan="2">Emploi de temps</th>
-                        <td colspan="2" class="bg-blue">Matin</td>
-                        <td colspan="2" class="bg-blue">Après midi</td>
-                    </tr>
-                    <tr>
-                        <td>8h30-10h20</td>
-                        <td>10h20-12h30</td>
-                        <td>13h30-15h20</td>
-                        <td>15h20-17h30</td>
-                    </tr>
-                    <tr>
-                        <th>Lundi</th>
-                        <td colspan="2">PMM</td>
-                        <td colspan="2">PMM</td>
-                    </tr>
-                    <tr>
-                        <th>Mardi</th>
-                        <td colspan="2">TDM</td>
-                        <td colspan="2">IT_Security</td>
-                    </tr>
-                    <tr>
-                        <th>Mercredi</th>
-                        <td colspan="2">TDM</td>
-                        <td colspan="2"></td>
-                    </tr>
-                    <tr>
-                        <th>Jeudi</th>
-                        <td colspan="2">TDM</td>
-                        <td colspan="2">PMM</td>
-                    </tr>
-                    <tr>
-                        <th>Vendredi</th>
-                        <td colspan="2">IT_Security</td>
-                        <td colspan="2">IT_Security</td>
-                    </tr>
-                    <tr>
-                        <th>Samedi</th>
-                        <td colspan="2">Ratt/Exam/Controle</td>
-                        <td colspan="2"></td>
-                    </tr>
-                </table>
-                <h2 style="text-align: center; padding-top: 1rem;">Semestre 6</h2>
-            </div>
+        <div class="calendar__S5">
+            <table class="table_emploi">
+                <tr>
+                    <th rowspan="2">Emploi de temps</th>
+                    <td colspan="2" class="bg-blue">Matin</td>
+                    <td colspan="2" class="bg-blue">Après midi</td>
+                </tr>
+                <tr>
+                    <td>8h30-10h20</td>
+                    <td>10h20-12h30</td>
+                    <td>13h30-15h20</td>
+                    <td>15h20-17h30</td>
+                </tr>
+                <tr>
+                    <th>Lundi</th>
+                    <td colspan="2">TI</td>
+                    <td colspan="2">TNIM</td>
+                </tr>
+                <tr>
+                    <th>Mardi</th>
+                    <td colspan="2">APR</td>
+                    <td colspan="2">TNIM</td>
+                </tr>
+                <tr>
+                    <th>Mercredi</th>
+                    <td colspan="2">APR</td>
+                    <td colspan="2">TI</td>
+                </tr>
+                <tr>
+                    <th>Jeudi</th>
+                    <td colspan="2">TNIM</td>
+                    <td colspan="2">APR</td>
+                </tr>
+                <tr>
+                    <th>Vendredi</th>
+                    <td colspan="2">TI</td>
+                    <td colspan="2">Ratt/Exam/Controle</td>
+                </tr>
+                <tr>
+                    <th>Samedi</th>
+                    <td colspan="2">Ratt/Exam/Controle</td>
+                    <td colspan="2"></td>
+                </tr>
+            </table>
+            <h2 style="text-align: center; padding-top: 1rem;">Semestre 5</h2>
+        </div>
+        <div class="calendar__S6">
+            <table class="table_emploi">
+                <tr>
+                    <th rowspan="2">Emploi de temps</th>
+                    <td colspan="2" class="bg-blue">Matin</td>
+                    <td colspan="2" class="bg-blue">Après midi</td>
+                </tr>
+                <tr>
+                    <td>8h30-10h20</td>
+                    <td>10h20-12h30</td>
+                    <td>13h30-15h20</td>
+                    <td>15h20-17h30</td>
+                </tr>
+                <tr>
+                    <th>Lundi</th>
+                    <td colspan="2">PMM</td>
+                    <td colspan="2">PMM</td>
+                </tr>
+                <tr>
+                    <th>Mardi</th>
+                    <td colspan="2">TDM</td>
+                    <td colspan="2">IT_Security</td>
+                </tr>
+                <tr>
+                    <th>Mercredi</th>
+                    <td colspan="2">TDM</td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <th>Jeudi</th>
+                    <td colspan="2">TDM</td>
+                    <td colspan="2">PMM</td>
+                </tr>
+                <tr>
+                    <th>Vendredi</th>
+                    <td colspan="2">IT_Security</td>
+                    <td colspan="2">IT_Security</td>
+                </tr>
+                <tr>
+                    <th>Samedi</th>
+                    <td colspan="2">Ratt/Exam/Controle</td>
+                    <td colspan="2"></td>
+                </tr>
+            </table>
+            <h2 style="text-align: center; padding-top: 1rem;">Semestre 6</h2>
         </div>
     </div>
+</div>
 </section>
 
 <?php

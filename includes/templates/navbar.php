@@ -14,20 +14,22 @@
              <a href="logout.php">Deconnexion</a>
 
            </div>
-           </>
+
 
          <?php else : ?>
+         <li class="navbar__item">
            <a href="login.php" class="navbar__link">S'authentifier</a>
-         <?php endif; ?>
-
          </li>
+       <?php endif; ?>
 
-         <?php if (isset($_SESSION['cne'])) : ?>
-         <?php else : ?>
-           <li class="navbar__item">
-             <a class="navbar__link" href="candidature.php">Je condidate</a>
-           </li>
-         <?php endif; ?>
+       </li>
+
+       <?php if (isset($_SESSION['cne'])) : ?>
+       <?php else : ?>
+         <li class="navbar__item">
+           <a class="navbar__link" href="candidature.php">Je candidate</a>
+         </li>
+       <?php endif; ?>
      </ul>
    </nav>
    <nav class="navbar-fixed">
@@ -50,7 +52,7 @@
          <a href="debouches.php" class="navbar-fixed__link">Debouchés</a>
        </li>
        <li class="navbar-fixed__item">
-         <a href="#" class="navbar-fixed__link">Help</a>
+         <a href="help.php" class="navbar-fixed__link">Help</a>
        </li>
      </ul>
    </nav>

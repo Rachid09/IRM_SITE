@@ -1,34 +1,14 @@
 <?php
-if (isset($_POST['cne']) && !empty($_POST['cne'])) {
-    session_start();
-
-    define('__ROOT__', dirname(dirname(__FILE__)));
-    require(__ROOT__ . '/site_irm/includes/functions/connect.php');
-    try {
-
-        $req = "SELECT * FROM info_etudiants WHERE cne=?";
-        $stmt = $db->prepare($req);
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->execute(array($_POST['cne']));
-        $info = $stmt->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['cne'] = $_POST['cne'];
-        $_SESSION['prenom'] = $info['prenom'];
-        $_SESSION['nom'] = $info['nom'];
-        $_SESSION['email'] = $info['email'];
-
-
-        if (password_verify($_POST["password"], $info['password'])) {
-            header('location:profile.php');
-        } else {
-            echo "ERREUR de mot de passe!!!";
-            echo '<a href="candidature.php">Retourner à la page d inscription</a>';
-        }
-        $db = null;
-    } catch (PDOException $e) {
-
-        echo "ERREUR :" . $e->getMessage();
-    }
+session_start();
+function redirect()
+{
+    header('location: index.php');
 }
+if (isset($_SESSION['cne'])) {
+    redirect();
+}
+
+
 
 
 ?>
@@ -53,9 +33,28 @@ include 'includes/templates/statistiques.php';
             <div class="logo">
                 <img src="./layout/img/Frame.png" alt="" />
             </div>
-            <form action="login.php" method="post">
+            <form action="login_traitement.php" method="post">
+                <?php
+                if (isset($_GET['login_err'])) {
+                    $err = htmlspecialchars($_GET['login_err']);
+
+                    switch ($err) {
+                        case 'mtp_incorrect':
+                ?>
+                            <div style="padding:1rem 1rem; border-radius:4px; width:100%; margin-bottom:1rem;    background-color: antiquewhite;
+">
+                                <h1 style="color:brown; font-size:1rem;">mot de passe ou cne incorrect</h1>
+                            </div>
+                            <?php
+                            break;
+                            ?>
+
+                <?php
+                    }
+                }
+                ?>
                 <input type="text" class="form__input" placeholder="CNE*" name="cne" />
-                <input class="form__input" name="password" type="password" placeholder="Password" />
+                <input class="form__input" name="password" type="password" placeholder="Password*" />
 
                 <input type="submit" class="form__input cta-btn" placeholder="" name="submit" value="Se connecter" />
             </form>
