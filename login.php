@@ -54,9 +54,9 @@ include 'includes/templates/statistiques.php';
                 }
                 ?>
                 <input type="text" class="form__input" placeholder="CNE*" name="cne" />
-                <input class="form__input" name="password" type="password" placeholder="Password*" />
+                <input class="form__input" name="password" type="password" placeholder="Password*" required />
 
-                <input type="submit" class="form__input cta-btn" placeholder="" name="submit" value="Se connecter" />
+                <input type="submit" class="form__input cta-btn" required placeholder="" name="submit" value="Se connecter" />
             </form>
         </div>
     </div>

@@ -17,7 +17,9 @@ if (
     && !empty($_POST['etab_prev'])
     && !empty($_POST['diplome'])
     && !empty($_POST['civilite'])
+
 ) {
+    echo $_POST['img_profile'];
     # code...
 
     try {
@@ -26,6 +28,9 @@ if (
         $email = $_POST["email"];
         $password = $_POST['password'];
         $tele = $_POST["tele"];
+        $filename = $_FILES["img_profile"]["name"];
+        $tempname = $_FILES["img_profile"]["tmp_name"];
+        $folder = "layout/uploads/" . $filename;
         $cne_candidat = $_POST["cne"];
         $pays = $_POST["pays"];
         $annee_bac = $_POST['annee_bac'];
@@ -43,7 +48,7 @@ if (
         $stmt->execute();
         $etud = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($etud['nbrlignes'] == 0) {
-            $query = "INSERT INTO info_etudiants values (?,?,?,?,?,?,?,?,?,?,?,?)";
+            $query = "INSERT INTO info_etudiants values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = $db->prepare($query);
 
             $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -56,12 +61,17 @@ if (
             $stmt->bindValue(5, $tele, PDO::PARAM_STR);
             $stmt->bindValue(6, $email, PDO::PARAM_STR);
             $stmt->bindValue(7, $hashed_password, PDO::PARAM_STR);
-            $stmt->bindValue(8, $annee_bac, PDO::PARAM_INT);
-            $stmt->bindValue(9, $serie_bac, PDO::PARAM_STR);
-            $stmt->bindValue(10, $etab_prev, PDO::PARAM_STR);
-            $stmt->bindValue(11, $diplome, PDO::PARAM_STR);
-            $stmt->bindValue(12, $civilite, PDO::PARAM_STR);
-            $result = $stmt->execute();
+            $stmt->bindValue(8, $filename, PDO::PARAM_STR);
+            $stmt->bindValue(9, $annee_bac, PDO::PARAM_INT);
+            $stmt->bindValue(10, $serie_bac, PDO::PARAM_STR);
+            $stmt->bindValue(11, $etab_prev, PDO::PARAM_STR);
+            $stmt->bindValue(12, $diplome, PDO::PARAM_STR);
+            $stmt->bindValue(13, $civilite, PDO::PARAM_STR);
+            if (move_uploaded_file($tempname, $folder)) {
+                $result = $stmt->execute();
+            } else {
+                echo 'image not uploded';
+            }
 
 
             header('Location:candidature.php?reg_err=success');
@@ -134,7 +144,7 @@ include 'includes/templates/statistiques.php';
             <img src="./layout/img//1 2.jpg" alt="" srcset="" />
         </figure>
         <div class="condidature__form">
-            <form action="candidature.php" method="post">
+            <form action="candidature.php" method="post" enctype='multipart/form-data'>
                 <select name="civilite" class="form__input" required>
                     <option value="">Civilité*</option>
                     <option value="Mr">Mr</option>
@@ -154,6 +164,7 @@ include 'includes/templates/statistiques.php';
                 <input type="text" class="form__input" placeholder="Tele" name="tele" required />
                 <input type="email" class="form__input" placeholder="Email*" name="email" required />
                 <input class="form__input" name="password" type="password" placeholder="Password" required />
+                <input class="form__input" name="img_profile" type="file" placeholder="upload votre image" required />
 
                 <select name="serie_bac" class="form__input" required>
                     <option value="">Série du Baccalauréat*</option>

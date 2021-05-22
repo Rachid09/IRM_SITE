@@ -37,7 +37,8 @@ include 'includes/templates/navbar.php';
 <section class="profile">
     <div class="profile__infos">
         <div class="profile__infos--avatar mb-1">
-            <i class="iconsminds-male"></i>
+            <!-- <i class="iconsminds-male"></i> -->
+            <img src="layout/uploads/<?php echo $etud['profile_img'] ?>" alt="" srcset="">
         </div>
         <div class="profile__infos--name mb-1">
             <h1><?php echo $etud['nom'] . ' ' .  $etud['prenom']; ?></h1>

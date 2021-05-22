@@ -12,6 +12,9 @@ if (isset($_POST['submit'])) {
     $email = $_POST["email"];
     $password = $_POST['password'];
     $password_retype = $_POST['R_password'];
+    $filename = $_FILES["img_profile"]["name"];
+    $tempname = $_FILES["img_profile"]["tmp_name"];
+    $folder = "layout/uploads/" . $filename;
     $tele = $_POST["tele"];
     $annee_bac = $_POST['annee_bac'];
     $serie_bac = $_POST['serie_bac'];
@@ -26,6 +29,7 @@ if (isset($_POST['submit'])) {
         tele=?,
         email=?,
         password=?,
+        profile_img=?,
         annee_bac=?,
         serie_bac=?,
         etab_prev=?,
@@ -38,13 +42,20 @@ if (isset($_POST['submit'])) {
         $stmt->bindValue(3, $prenom, PDO::PARAM_STR);
         $stmt->bindValue(4, $tele, PDO::PARAM_STR);
         $stmt->bindValue(5, $email, PDO::PARAM_STR);
-        $stmt->bindValue(6, $password, PDO::PARAM_STR);
-        $stmt->bindValue(7, $annee_bac, PDO::PARAM_INT);
-        $stmt->bindValue(8, $serie_bac, PDO::PARAM_STR);
-        $stmt->bindValue(9, $etab_prev, PDO::PARAM_STR);
-        $stmt->bindValue(10, $diplome, PDO::PARAM_STR);
-        $stmt->bindValue(11, $cne, PDO::PARAM_STR);
-        $result = $stmt->execute();
+        $stmt->bindValue(6, $password_hashed, PDO::PARAM_STR);
+        $stmt->bindValue(7, $filename, PDO::PARAM_STR);
+        $stmt->bindValue(8, $annee_bac, PDO::PARAM_INT);
+        $stmt->bindValue(9, $serie_bac, PDO::PARAM_STR);
+        $stmt->bindValue(10, $etab_prev, PDO::PARAM_STR);
+        $stmt->bindValue(11, $diplome, PDO::PARAM_STR);
+        $stmt->bindValue(12, $cne, PDO::PARAM_STR);
+        if (move_uploaded_file($tempname, $folder)) {
+            $result = $stmt->execute();
+        } else {
+            echo 'image not uploded';
+        }
+
+
 
         $db = null;
         header('location: profile.php');

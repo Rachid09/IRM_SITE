@@ -47,7 +47,7 @@ include 'includes/templates/navbar.php';
         ?>
 
 
-        <form action="save_modif.php" method="post">
+        <form action="save_modif.php" method="post" enctype='multipart/form-data'>
             <input type="hidden" name="cne" value="<?= $etud->cne ?>">
             <div class="form-group">
                 <label for="">Nom :</label>
@@ -56,6 +56,10 @@ include 'includes/templates/navbar.php';
             <div class="form-group">
                 <label for="">Prenom :</label>
                 <input type="text" class="form__input" placeholder="Prenom" name="prenom" required value="<?= $etud->prenom ?>" />
+            </div>
+            <div class="form-group">
+                <label for="">Image</label>
+                <input type="file" class="form__input" name="img_profile" value="<?= $etud->profile_img ?>" />
             </div>
 
             <div class="form-group">

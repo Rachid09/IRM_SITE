@@ -65,4 +65,11 @@
   font-size: 12.5rem;
   color: #a5a4a4;
 }
+.profile__infos--avatar{
+  
+}
+.profile__infos--avatar img{
+ width: 100%;
+  
+}
 
